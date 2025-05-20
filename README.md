@@ -1,6 +1,6 @@
 # Le tarot du code
 
-## Description
+## Description : un projet du cursus "FullStack" de Codacademia
 Le programme fait un tirage de 3 cartes parmis les arcanes majeurs du "Tarot de code", développé par chatGPT.
 Nomme pour toi même ce que tu désires éclaircir et démarre le programme. 
 La première carte représente le passé, la deuxième carte le présent et la troisième le futur.
