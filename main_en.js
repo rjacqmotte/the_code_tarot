@@ -4,101 +4,94 @@
 // it is used to choose the 3 cards among the 22 arcanes:
 // one for the past, one for the present, one for the future.
 const randomOfThreeIndex = () => {
-    const arrayOfIndex = [];
-    while (arrayOfIndex.length < 3) {
-        let newIndex = Math.floor(Math.random()*22);
-        while (arrayOfIndex.includes(newIndex)) {
-            newIndex = Math.floor(Math.random()*22);
-        }
-      arrayOfIndex.push(newIndex);
+  const arrayOfIndex = [];
+  while (arrayOfIndex.length < 3) {
+    let newIndex = Math.floor(Math.random() * 22);
+    while (arrayOfIndex.includes(newIndex)) {
+      newIndex = Math.floor(Math.random() * 22);
     }
-    return arrayOfIndex;  
+    arrayOfIndex.push(newIndex);
+  }
+  return arrayOfIndex;
 };
 
 // take ms, time in milli second. return promise after time defined
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+// log a introduction message. return null. take no argument.
+const introductionMessage = () => {
+  console.log("Hello : )");
+  console.log("Take a moment to think about your demand.");
+  console.log("... What do you want for you, just now? ...");
+  console.log("... Focus on your demand ...");
+  console.log("... Breath in... Breath out ...");
+  console.log("... Feel the air in and out of your body ...");
+  console.log("... Feel the flow of data in your CPU ...");
+  console.log("... Feel the galaxy dancing slowly around itself ...");
+  console.log("... Now your 3 cards, representation of ...  - the PAST - the PRESENT - the FUTURE -");
+  console.log("");
+};
+
+// log the presentation of the PAST card.
+// take an arrayOfIndex and tarot game (array of object). return null.
+// take the FIRST index of the array, log number, name and description of the object.
+const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+  console.log("");
+  console.log("---------------------------------------");
+  console.log(' --- the PAST card ---');
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].number}. ${tarotGame[arrayOfThreeIndex[0]].name} ---`);
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].description} ---`);
+  console.log("");
+};
+
+// log the presentation of the PRESENT card.
+// take an arrayOfIndex and tarot game (array of object). return null.
+// take the SECOND index of the array, log number, name and desrciption of the object.
+const presentCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+  console.log(' --- the PRESENT card ---');
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].number}. ${tarotGame[arrayOfThreeIndex[1]].name} ---`);
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].description} ---`);
+  console.log("");
+};
+
+// log the presentation of the FUTUR card.
+// take an arrayOfIndex and tarot game (array of object). return null.
+// take the THIRD index of the array, log number, name and description of the object.
+const futurCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+  console.log(' --- the FUTURE card ---');
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].number}. ${tarotGame[arrayOfThreeIndex[2]].name} ---`);
+  console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].description} ---`);
+  console.log("---------------------------------------");
+  console.log("");
+};
+
+// log the signification message of all cards.
+// take an arrayOfIndex and tarot game (array of object). return null.
+// take the FIRST index of the array and log "past" message,
+// the SECOND index and log "present" message, the THIRD index and log "future" message. 
+const significationMessage = (arrayOfThreeIndex, tarotGame) => {
+  console.log(" ");
+  console.log("---------------------------------------");
+  console.log("--- These cards could say : ");
+  console.log("---------------------------------------");
+  console.log(tarotGame[arrayOfThreeIndex[0]].past);
+  console.log(tarotGame[arrayOfThreeIndex[1]].present);
+  console.log(tarotGame[arrayOfThreeIndex[2]].future);
+  console.log("---------------------------------------");
+  console.log("");
+};
+
+// log a conclusion message. return null. take no argument.
+const conclusionMessage = () => {
+  console.log("");
+  console.log("---     THIS IS THE WAY ...   ---");
+  console.log("--- ... of the CODE TAROT.    ---");
+};
+
 // compil and log the message to the terminal. return null.
 // take an array of 3 numbers from 0 to 21 and the tarot game (an array of object).
 // async function for gestion of delay and use of "await" 
 const messageWriter = async (arrayOfThreeIndex, tarotGame) => {
-  
-  // ++++ DEFINE LOCAL FUNCTION ++++
-
-  // log a introduction message. return null. take no argument.
-  const introductionMessage = () => {
-    console.log("Hello : )");
-    console.log("Take a moment to think about your demand.");
-    console.log("... What do you want for you, just now? ...");
-    console.log("... Focus on your demand ...");
-    console.log("... Breath in... Breath out ...");
-    console.log("... Feel the air in and out of your body ...");
-    console.log("... Feel the flow of data in your CPU ...");
-    console.log("... Feel the galaxy dancing slowly around itself ...");
-    console.log("... Now your 3 cards, representation of ...  - the PAST - the PRESENT - the FUTURE -");
-    console.log("");
-  };
-
-  // log the presentation of the PAST card.
-  // take an arrayOfIndex and tarot game (array of object). return null.
-  // take the FIRST index of the array, log number, name and desrciption of the object.
-  const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {
-    console.log("");
-    console.log("---------------------------------------");
-    console.log(' --- the PAST card ---');
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].number}. ${tarotGame[arrayOfThreeIndex[0]].name} ---`);
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].description} ---`);
-    console.log("");
-  };
-  
-  // log the presentation of the PRESENT card.
-  // take an arrayOfIndex and tarot game (array of object). return null.
-  // take the SECOND index of the array, log number, name and desrciption of the object.
-  const presentCardPresentation = (arrayOfThreeIndex, tarotGame) => {
-    console.log(' --- the PRESENT card ---');
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].number}. ${tarotGame[arrayOfThreeIndex[1]].name} ---`);
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].description} ---`);
-    console.log("");
-  };
-  
-  // log the presentation of the FUTUR card.
-  // take an arrayOfIndex and tarot game (array of object). return null.
-  // take the THIRD index of the array, log number, name and description of the object.
-  const futurCardPresentation = (arrayOfThreeIndex, tarotGame) => {
-    console.log(' --- the FUTUR card ---');
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].number}. ${tarotGame[arrayOfThreeIndex[2]].name} ---`);
-    console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].description} ---`);
-    console.log("---------------------------------------");
-    console.log("");
-  };
-
-  // log the signification message of all cards.
-  // take an arrayOfIndex and tarot game (array of object). return null.
-  // take the FIRST index of the array and log "past" message,
-  // the SECOND index and log "present" message, the THIRD index and log "future" message. 
-  const significationMessage = (arrayOfThreeIndex, tarotGame) => {
-    console.log(" ");
-    console.log("---------------------------------------");
-    console.log("--- These cards could say : ");
-    console.log("---------------------------------------");
-    console.log(tarotGame[arrayOfThreeIndex[0]].past);
-    console.log(tarotGame[arrayOfThreeIndex[1]].present);
-    console.log(tarotGame[arrayOfThreeIndex[2]].future);
-    console.log("---------------------------------------");
-    console.log("");
-  };
-
-  // // log a conclusion message. return null. take no argument.
-  const conclusionMessage = () => {
-    console.log("");
-    console.log("---     THIS IS THE WAY ...   ---");
-    console.log("--- ... of the CODE TAROT.    ---");
-  };
-
-  // ++++ MAIN OF FUNCTION ++++
-
-
-
   // delay of 1500ms between each message
   introductionMessage();
   await wait(1500);
