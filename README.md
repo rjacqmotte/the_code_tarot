@@ -10,7 +10,10 @@ The first card represents the past, the second the present, and the third the fu
 + Performs a random 3-card tarot draw.
 
 ## Usage
-Download the program, name to yourself what you wish to shed light on, and run the program in a Node.js environment.
+1. Download the program main_en.js, 
+2. open it or copy it in VS code (or an other node.js envirronement) 
+3. run it. ("run and debub" with F5)
+4. look at the console.
 
 ## Technologies
 + JavaScript
@@ -33,7 +36,10 @@ La première carte représente le passé, la deuxième carte le présent et la t
 Fait un tirage de tarot aléatoire de 3 cartes.
 
 ## Utilisation
-Télécharge le programme, nomme pour toi même ce que tu désires éclaircir et démarre le programme dans un envirronement node.js. 
+1. Téléchargez le programme main_en.js,  
+2. ouvrez-le ou copiez-le dans VS Code (ou un autre environnement Node.js),  
+3. exécutez-le (« Exécuter et déboguer » avec F5),  
+4. regardez la console.
 
 ## Technologies
 Javascript
