@@ -32,26 +32,66 @@ const messageWriter = (arrayOfThreeIndex, tarotGame) => {
     console.log("... Feel the flow of data in your CPU ...");
     console.log("... Feel the galaxy dancing slowly around itself ...");
     console.log("... Now your 3 cards, representation of ...  - the PAST - the PRESENT - the FUTURE -");
+    console.log("");
   };
 
   // log the presentation of the PAST card.
   // take an arrayOfIndex and tarot game (array of object). return null.
   // take the FIRST index of the array, log number, name and desrciption of the object.
-  const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+  const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+    console.log(' --- the PAST card ---');
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].number}. ${tarotGame[arrayOfThreeIndex[0]].name} ---`);
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].description} ---`);
+    console.log("");
+  };
   
   // log the presentation of the PRESENT card.
   // take an arrayOfIndex and tarot game (array of object). return null.
   // take the SECOND index of the array, log number, name and desrciption of the object.
-  const presentCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+  const presentCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+    console.log(' --- the PRESENT card ---');
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].number}. ${tarotGame[arrayOfThreeIndex[1]].name} ---`);
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[1]].description} ---`);
+    console.log("");
+  };
   
   // log the presentation of the FUTUR card.
   // take an arrayOfIndex and tarot game (array of object). return null.
   // take the THIRD index of the array, log number, name and desrciption of the object.
-  const futurCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+  const futurCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+    console.log(' --- the FUTUR card ---');
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].number}. ${tarotGame[arrayOfThreeIndex[2]].name} ---`);
+    console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].description} ---`);
+    console.log("");
+  };
+
+  // log the signification message of all cards.
+  // take an arrayOfIndex and tarot game (array of object). return null.
+  // take the FIRST index of the array and log "past" message,
+  // the SECOND index and log "present" message, the THIRD index and log "futur" message. 
+  const significationMessage = (arrayOfThreeIndex, tarotGame) => {
+    console.log("These cards could say : ");
+    console.log(tarotGame[arrayOfThreeIndex[0]].past);
+    console.log(tarotGame[arrayOfThreeIndex[1]].present);
+    console.log(tarotGame[arrayOfThreeIndex[2]].future);
+    console.log("");
+  };
+
+  // // log a conclusion message. return null. take no argument.
+  const conclusionMessage = () => {
+    console.log("--- The Code Tarot Talked ---");
+    console.log("");
+    console.log("--- THIS IS THE WAY ---")
+  };
 
   // ++++ MAIN OF FUNCTION ++++
 
   introductionMessage();
+  pastCardPresentation(arrayOfThreeIndex, tarotGame);
+  presentCardPresentation(arrayOfThreeIndex, tarotGame);
+  futurCardPresentation(arrayOfThreeIndex, tarotGame);
+  significationMessage(arrayOfThreeIndex, tarotGame);
+  conclusionMessage();
 };
 
 // the tarot game is an array of 22 objects
@@ -234,5 +274,8 @@ const theCodeTarot = [
   }
 ];
 
-messageWriter();
+// ++++ MAIN ++++
+
+const threeCards = randomOfThreeIndex();
+messageWriter(threeCards, theCodeTarot);
 console.log(randomOfThreeIndex());
