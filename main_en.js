@@ -1,17 +1,18 @@
 
 
-// to choose 3 cards in 22. return an array of 3 number from 0 to 21, all different.
+// return an array of 3 randoms numbers from 0 to 21, all different.
+// it is used to choose the 3 cards among the 22 arcanes:
+// one for the past, one for the present, one for the future.
 const randomOfThreeIndex = () => {
     const arrayOfIndex = [];
-    while (arrayOfIndex < 4) {
+    while (arrayOfIndex.length < 3) {
         let newIndex = Math.floor(Math.random()*22);
-        if (arrayOfIndex.includes(newIndex)) {
+        while (arrayOfIndex.includes(newIndex)) {
             newIndex = Math.floor(Math.random()*22);
-        arrayOfIndex.push(newIndex);
         }
+      arrayOfIndex.push(newIndex);
     }
-    arrayOfIndex.forEach(element => element = Math.floor(Math.random()*22))
-    
+    return arrayOfIndex;  
 };
 
 // create the message. take an array of 3 number from 0 to 21 and the tarot game (an array of object) return the message in the console.
@@ -197,3 +198,4 @@ const theCodeTarot = [
   }
 ];
 
+console.log(randomOfThreeIndex());
