@@ -15,8 +15,44 @@ const randomOfThreeIndex = () => {
     return arrayOfIndex;  
 };
 
-// create the message. take an array of 3 number from 0 to 21 and the tarot game (an array of object) return the message in the console.
-const messageWriter = (arrayOfThreeIndex, tarotGame) => {};
+// compil and log the message to the terminal. return null.
+// take an array of 3 numbers from 0 to 21 and the tarot game (an array of object).
+const messageWriter = (arrayOfThreeIndex, tarotGame) => {
+  
+  // ++++ DEFINE LOCAL FUNCTION ++++
+
+  // log a introduction message. return null. take no argument.
+  const introductionMessage = () => {
+    console.log("Hello : )");
+    console.log("Take a moment to think about your demand.");
+    console.log("... What do you want for you, just now? ...");
+    console.log("... Focus on your demand ...");
+    console.log("... Breath in... Breath out ...");
+    console.log("... Fell the air in and out of your body ...");
+    console.log("... Feel the flow of data in your CPU ...");
+    console.log("... Feel the galaxy dancing slowly around itself ...");
+    console.log("... Now your 3 cards, representation of ...  - the PAST - the PRESENT - the FUTURE -");
+  };
+
+  // log the presentation of the PAST card.
+  // take an arrayOfIndex and tarot game (array of object). return null.
+  // take the FIRST index of the array, log number, name and desrciption of the object.
+  const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+  
+  // log the presentation of the PRESENT card.
+  // take an arrayOfIndex and tarot game (array of object). return null.
+  // take the SECOND index of the array, log number, name and desrciption of the object.
+  const presentCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+  
+  // log the presentation of the FUTUR card.
+  // take an arrayOfIndex and tarot game (array of object). return null.
+  // take the THIRD index of the array, log number, name and desrciption of the object.
+  const futurCardPresentation = (arrayOfThreeIndex, tarotGame) => {};
+
+  // ++++ MAIN OF FUNCTION ++++
+
+  introductionMessage();
+};
 
 // the tarot game is an array of 22 objects
 const theCodeTarot = [
@@ -198,4 +234,5 @@ const theCodeTarot = [
   }
 ];
 
+messageWriter();
 console.log(randomOfThreeIndex());
