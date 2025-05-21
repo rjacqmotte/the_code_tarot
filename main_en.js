@@ -39,6 +39,8 @@ const messageWriter = (arrayOfThreeIndex, tarotGame) => {
   // take an arrayOfIndex and tarot game (array of object). return null.
   // take the FIRST index of the array, log number, name and desrciption of the object.
   const pastCardPresentation = (arrayOfThreeIndex, tarotGame) => {
+    console.log("");
+    console.log("---------------------------------------");
     console.log(' --- the PAST card ---');
     console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].number}. ${tarotGame[arrayOfThreeIndex[0]].name} ---`);
     console.log(` --- ${tarotGame[arrayOfThreeIndex[0]].description} ---`);
@@ -62,6 +64,7 @@ const messageWriter = (arrayOfThreeIndex, tarotGame) => {
     console.log(' --- the FUTUR card ---');
     console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].number}. ${tarotGame[arrayOfThreeIndex[2]].name} ---`);
     console.log(` --- ${tarotGame[arrayOfThreeIndex[2]].description} ---`);
+    console.log("---------------------------------------");
     console.log("");
   };
 
@@ -70,18 +73,22 @@ const messageWriter = (arrayOfThreeIndex, tarotGame) => {
   // take the FIRST index of the array and log "past" message,
   // the SECOND index and log "present" message, the THIRD index and log "futur" message. 
   const significationMessage = (arrayOfThreeIndex, tarotGame) => {
-    console.log("These cards could say : ");
+    console.log(" ");
+    console.log("---------------------------------------");
+    console.log("--- These cards could say : ");
+    console.log("---------------------------------------");
     console.log(tarotGame[arrayOfThreeIndex[0]].past);
     console.log(tarotGame[arrayOfThreeIndex[1]].present);
     console.log(tarotGame[arrayOfThreeIndex[2]].future);
+    console.log("---------------------------------------");
     console.log("");
   };
 
   // // log a conclusion message. return null. take no argument.
   const conclusionMessage = () => {
-    console.log("--- The Code Tarot Talked ---");
     console.log("");
-    console.log("--- THIS IS THE WAY ---")
+    console.log("---     THIS IS THE WAY ...   ---");
+    console.log("--- ... of the CODE TAROT.    ---");
   };
 
   // ++++ MAIN OF FUNCTION ++++
@@ -278,4 +285,3 @@ const theCodeTarot = [
 
 const threeCards = randomOfThreeIndex();
 messageWriter(threeCards, theCodeTarot);
-console.log(randomOfThreeIndex());
